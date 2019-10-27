@@ -1,0 +1,35 @@
+all: main
+# compilacao do executável em si, com todos os objetos gerados
+main: main.c BBtempos.o LOtempos.o LOStempos.o ABBtempos.o AVLtempos.o LFREQtempos.o lfreq.o avl.o abb.o los.o lo.o bb.o pot10.o
+	gcc -Wall -lm -o main -std=c99 -g main.c BBtempos.o LOtempos.o LOStempos.o ABBtempos.o AVLtempos.o LFREQtempos.o lfreq.o avl.o abb.o los.o lo.o bb.o pot10.o
+
+#compilação dos subprogramas que retornam o tempo de cada operação (inserção, busca e remoção)
+BBtempos.o: BBtempos.c pot10.o
+	gcc -Wall -lm -o BBtempos.o -std=c99 -g -c BBtempos.c pot10.o
+LOtempos.o: LOtempos.c pot10.o
+	gcc -Wall -lm -o LOtempos.o -std=c99 -g -c LOtempos.c pot10.o
+LOStempos.o: LOStempos.c pot10.o
+	gcc -Wall -lm -o LOStempos.o -std=c99 -g -c LOStempos.c pot10.o
+ABBtempos.o: ABBtempos.c pot10.o
+	gcc -Wall -lm -o ABBtempos.o -std=c99 -g -c ABBtempos.c pot10.o
+AVLtempos.o: AVLtempos.c pot10.o
+	gcc -Wall -lm -o AVLtempos.o -std=c99 -g -c AVLtempos.c pot10.o
+LFREQtempos.o: LFREQtempos.c pot10.o
+	gcc -Wall -lm -o LFREQtempos.o -std=c99 -g -c LFREQtempos.c pot10.o
+
+# compilação das TADS para a estruturas de dados e suas operações/algoritmos
+bb.o: bb.c
+	gcc -Wall -o bb.o -std=c99 -g -c  bb.c
+lo.o: lo.c
+	gcc -Wall -o lo.o -g -c lo.c
+los.o: los.c
+	gcc -Wall -o los.o -g -c los.c
+abb.o: abb.c
+	gcc -Wall -o abb.o -g -c abb.c
+avl.o: avl.c
+	gcc -Wall -o avl.o -std=c99 -g -c avl.c
+lfreq.o: lfreq.c
+	gcc -Wall -g -o lfreq.o -c lfreq.c 
+#Compilação de função que calcula potência de 10
+pot10.o: pot10.c
+	gcc -Wall -g -o pot10.o -c pot10.c

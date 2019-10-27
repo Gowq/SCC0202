@@ -1,0 +1,16 @@
+[] Adaptar TADs prontos
+   [] Busca Binária (fazer do zero)
+   [] Lista Ordenada
+   [] Lista Ordenada com Sentinela
+   [X] Árvore Binária de Busca
+   [X] Árvore AVL
+       [] Função de Remoção
+[] Criar TAD Lista de Frequência
+[] Programa Principal comparando os TADS e caculando o tempo
+[] Iniciar repositório no gitlab
+   [] Fazer primeiro upload para o gitlab
+Quarta, 28/11/2018
+1º ciclo (11h20min):
+   - Adaptei Árvore Binária de Busca (Atenágoras)
+2º ciclo (11h54min):
+   - Adaptei Árvore AVL. Falta implementar função de remoção
